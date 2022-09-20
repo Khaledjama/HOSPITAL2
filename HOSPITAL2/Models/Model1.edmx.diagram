@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4c2da41e3a3149fe8de64c6c79371902" Name="Diagram1">
+        <EntityTypeShape EntityType="HospitalModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.AspNetRoles" Width="1.5" PointX="3.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.AspNetUserClaims" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.AspNetUserLogins" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.AspNetUserRoles" Width="1.5" PointX="6" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.AspNetUsers" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.data_Patient" Width="1.5" PointX="8.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Department" Width="1.5" PointX="1.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Doctor" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Nurse" Width="1.5" PointX="3.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.patient" Width="1.5" PointX="6" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalModel.Worker" Width="1.5" PointX="3.75" PointY="16.125" IsExpanded="true" />
+        <AssociationConnector Association="HospitalModel.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_patient_AspNetUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_data_Patient_patient" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_data_Patient_patient1" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Doctor_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Nurse_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_Worker_Department" ManuallyRouted="false" />
+        <AssociationConnector Association="HospitalModel.FK_patient_Doctor" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

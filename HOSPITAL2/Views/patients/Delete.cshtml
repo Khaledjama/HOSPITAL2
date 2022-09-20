@@ -1,0 +1,71 @@
+﻿@model HOSPITAL2.Models.patient
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>الغاء</h2>
+
+<h3>هل تريد الغاء هذا الحجز</h3>
+<div>
+    <h4>بيانات</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    @if (User.IsInRole("Screter Doc"))
+    {
+        <input type="submit" value="حذف الكشف" class="btn btn-default" />
+    }
+    else
+    {
+    <input type="submit" value="الغاء الكشف" class="btn btn-default" />
+    }
+
+</div>
+    }
+</div>

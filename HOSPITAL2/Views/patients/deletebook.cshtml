@@ -1,0 +1,73 @@
+﻿@model IEnumerable<HOSPITAL2.Models.patient>
+
+@{
+    ViewBag.Title = "deletebook";
+}
+
+
+<br />
+<strong> Serial Number</strong>
+<br />
+<br />
+@using (Html.BeginForm("deletebook", "patients", FormMethod.Post))
+{
+    <input type="text" name="search" placeholder="Please enter your serial number " />
+    <input type="submit" value="Search" />
+}
+
+@if (ViewBag.ss != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dat)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor.Name)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.age)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.dat)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.Name)
+                </td>
+
+                <td>
+                    @Html.ActionLink("الغاء", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+  @if (ViewBag.m != null)
+    {
+<div>لايوجد اعادة كشوفات بهذا الرقم الخاص بك</div>
+    }

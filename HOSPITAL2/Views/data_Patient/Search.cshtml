@@ -1,0 +1,62 @@
+﻿@model IEnumerable<HOSPITAL2.Models.data_Patient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<h2>اعادة كشــف
+</h2>
+@using (Html.BeginForm("Search", "data_patient", FormMethod.Post))
+{
+    <form class="form-inline">
+        <label for="email">Serial Number:</label>
+        <input type="text" class="form-control" id="serial" placeholder="Enter your serial number" name="ser" required>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
+
+@if (ViewBag.ss != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Serial_Num)
+            </th>
+            <th>
+                @Html.DisplayName("patient Name")
+            </th>
+            <th>
+                @Html.DisplayName("Doctor Name")
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Serial_Num)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.patient.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.patient.Doctor.Name)
+                </td>
+                <td>
+                    <a href="~/data_patient/Delete/@item.Id" class="btn btn-danger"> حجز</a>
+                </td>
+            </tr>
+        }
+
+
+    </table>
+}
+@if (ViewBag.m != null)
+{
+<div>لايوجد اعادة كشوفات بهذا الرقم الخاص بك</div>
+}
+

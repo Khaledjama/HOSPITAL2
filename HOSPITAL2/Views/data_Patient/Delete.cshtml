@@ -1,0 +1,23 @@
+﻿@model HOSPITAL2.Models.data_Patient
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>هل تريد اعــــــادة   كشفك؟</h3>
+<div>
+    <h4>انت تملك اعـادة واحدة فقط خلال 5 ايام </h4>
+    <hr />
+    <dl class="dl-horizontal">
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="OK" class="btn btn-default" /> 
+        </div>
+    }
+</div>

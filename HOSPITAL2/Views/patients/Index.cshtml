@@ -1,0 +1,21 @@
+﻿@model IEnumerable<HOSPITAL2.Models.patient>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <input type="text" name="text1" placeholder="Write Serial Number Of Doctor" />
+<input type="submit" value="Search" class="btn btn-default" />
+
+}
+
+
+
+@if (ViewBag.ss != null)
+{
+    @Html.Partial("KH");
+}
